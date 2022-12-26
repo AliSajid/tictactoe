@@ -21,6 +21,7 @@ env:
   RUST_BACKTRACE: 1
   MINIMUM_WAIT: 2
   MAXIMUM_WAIT: 5
+  MSRV: 1.62.0
 
 jobs:
   windows-ci:
@@ -33,13 +34,13 @@ jobs:
           - stable
           - beta
           - nightly
-          - 1.58.1  # MSRV
+          - ${{ env.MSRV }}  # MSRV
         os:
           - windows
         include:
           - os: windows
             logo: windows
-          - rust: 1.58.1
+          - rust: ${{ env.MSRV }}  # MSRV
             label: msrv
           - rust: nightly
             label: nightly
@@ -128,13 +129,13 @@ jobs:
           - stable
           - beta
           - nightly
-          - 1.58.1  # MSRV
+          - ${{ env.MSRV }}  # MSRV
         os:
           - ubuntu
         include:
           - os: ubuntu
             logo: ubuntu
-          - rust: 1.58.1
+          - rust: ${{ env.MSRV }}  # MSRV
             label: msrv
           - rust: nightly
             label: nightly
@@ -223,13 +224,13 @@ jobs:
           - stable
           - beta
           - nightly
-          - 1.58.1  # MSRV
+          - ${{ env.MSRV }}  # MSRV
         os:
           - macos
         include:
           - os: macos
             logo: apple
-          - rust: 1.58.1
+          - rust: ${{ env.MSRV }}  # MSRV
             label: msrv
           - rust: nightly
             label: nightly
