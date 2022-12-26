@@ -20,4 +20,3 @@ jobs:
               uses: actions-rs/audit-check@v1
               with:
                   token: ${{ secrets.ACTIONS_PAT_GITHUB }}
-                  new: 185618f862b98debb8b034c34e83173d
