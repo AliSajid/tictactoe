@@ -12,4 +12,8 @@ RUN brew install \
     gitleaks \
     markdownlint-cli \
     direnv \
-    commitizen
+    commitizen \
+    tree \
+    yq \
+    yamllint \
+    pre-commit
