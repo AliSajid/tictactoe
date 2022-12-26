@@ -1,0 +1,39 @@
+[package]
+name = "tictactoe"
+version = "1.0.0-alpha.1"
+edition = "2021"
+readme = "README.md"
+repository = "https://github.com/AliSajid/tictactoe"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "ttt_lib"
+path = "src/tictactoe/lib.rs"
+crate-type = ["lib"]
+
+[[bin]]
+name = "ttt"
+path = "src/tictactoe/main.rs"
+
+[dependencies]
+
+
+[build]
+jobs = 1
+incremental = true
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+lto = false
+
+[profile.release]
+opt-level = 's'
+debug = false
+debug-assertions = false
+strip = 'true'
+overflow-checks = true
+lto = true
+codegen-units = 1

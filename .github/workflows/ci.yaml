@@ -1,0 +1,296 @@
+name: Continuous integration
+
+on:
+  schedule:
+    - cron:  '30 5,17 * * *'
+  push:
+    branches:
+      - '*'
+      - '!main'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+
+concurrency:
+  group: CI
+
+env:
+  GIST_KEY: 185618f862b98debb8b034c34e83173d # pragma: allowlist secret
+  RUST_BACKTRACE: 1
+
+jobs:
+  windows-ci:
+    runs-on: ${{ matrix.os }}-latest
+    outputs:
+      result: ${{steps.result.outputs.result}}
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.58.1  # MSRV
+        os:
+          - windows
+        include:
+          - os: windows
+            logo: windows
+          - rust: 1.58.1
+            label: msrv
+          - rust: nightly
+            label: nightly
+          - rust: beta
+            label: beta
+          - rust: stable
+            label: stable
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          components: rustfmt, clippy
+
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - uses: actions-rs/cargo@v1
+        name: Build
+        with:
+          command: build
+
+      - uses: actions-rs/cargo@v1
+        name: Test
+        with:
+          command: test
+
+      - uses: actions-rs/cargo@v1
+        name: Format
+        with:
+          command: fmt
+          args: --all -- --check
+
+      - uses: actions-rs/cargo@v1
+        name: Lint
+        with:
+          command: clippy
+          args: -- -D warnings
+
+      - name: Create Awesome Badge - Success
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        if: success()
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          label: Build
+          namedLogo: ${{matrix.logo}}
+          message: Succeeded
+          color: green
+
+      - name: Create Awesome Badge - Failure
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        if: failure()
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          namedLogo: ${{matrix.logo}}
+          label: Build
+          message: Failed
+          isError: true
+
+      - name: Set Result
+        if: always()
+        run: echo "::set-output name=result::${{ success() }}"
+
+  ubuntu-ci:
+    runs-on: ${{ matrix.os }}-latest
+    outputs:
+      result: ${{steps.result.outputs.result}}
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.58.1  # MSRV
+        os:
+          - ubuntu
+        include:
+          - os: ubuntu
+            logo: ubuntu
+          - rust: 1.58.1
+            label: msrv
+          - rust: nightly
+            label: nightly
+          - rust: beta
+            label: beta
+          - rust: stable
+            label: stable
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-rs/toolchain@v1
+        name: Install Rust
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          components: rustfmt, clippy
+
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - uses: actions-rs/cargo@v1
+        name: Build
+        with:
+          command: build
+
+      - uses: actions-rs/cargo@v1
+        name: Test
+        with:
+          command: test
+
+      - uses: actions-rs/cargo@v1
+        name: Format
+        with:
+          command: fmt
+          args: --all -- --check
+
+      - uses: actions-rs/cargo@v1
+        name: Lint
+        with:
+          command: clippy
+          args: -- -D warnings
+
+      - name: Create Awesome Badge - Success
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        if: success()
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          label: Build
+          namedLogo: ${{matrix.logo}}
+          message: Succeeded
+          color: green
+
+      - name: Create Awesome Badge - Failure
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        if: failure()
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          namedLogo: ${{matrix.logo}}
+          label: Build
+          message: Failed
+          isError: true
+
+      - name: Set Result
+        if: always()
+        run: echo "::set-output name=result::${{ success() }}"
+
+  macos-ci:
+    runs-on: ${{ matrix.os }}-latest
+    outputs:
+      result: ${{steps.result.outputs.result}}
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.58.1  # MSRV
+        os:
+          - macos
+        include:
+          - os: macos
+            logo: apple
+          - rust: 1.58.1
+            label: msrv
+          - rust: nightly
+            label: nightly
+          - rust: beta
+            label: beta
+          - rust: stable
+            label: stable
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-rs/toolchain@v1
+        name: Install Rust
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          components: rustfmt, clippy
+
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - uses: actions-rs/cargo@v1
+        name: Build
+        with:
+          command: build
+
+      - uses: actions-rs/cargo@v1
+        name: Test
+        with:
+          command: test
+
+      - uses: actions-rs/cargo@v1
+        name: Format
+        with:
+          command: fmt
+          args: --all -- --check
+
+      - uses: actions-rs/cargo@v1
+        name: Lint
+        with:
+          command: clippy
+          args: -- -D warnings
+
+      - name: Create Awesome Badge - Success
+        id: result
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          label: Build
+          namedLogo: ${{matrix.logo}}
+          message: Succeeded
+          color: green
+
+      - name: Create Awesome Badge - Failure
+        uses: schneegans/dynamic-badges-action@v1.4.0
+        if: failure()
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ env.GIST_KEY }}
+          filename: ${{matrix.os}}-${{matrix.label}}.json
+          namedLogo: ${{matrix.logo}}
+          label: Build
+          message: Failed
+          isError: true
+
+      - name: Set Result
+        if: always()
+        run: echo "::set-output name=result::${{ success() }}"
+
+  semantic-release:
+    runs-on: ubuntu-latest
+    if: jobs.macos-ci.outputs.result == 'success' && jobs.windows-ci.outputs.result == 'success' && jobs.ubuntu-ci.outputs.result == 'success'
+    needs: [macos-ci, windows-ci, ubuntu-ci]
+    steps:
+      - uses: ./.github/workflows/release.yaml

@@ -1,0 +1,56 @@
+on: workflow_call
+
+name: Release
+
+env:
+  RUST_BACKTRACE: 1
+  SEMREL_RUST_VERSION: 1.0.0-alpha.8
+
+
+jobs:
+    release:
+        name: Semantic Release
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+            with:
+                fetch-depth: 0
+                persist-credentials: false
+
+          - name: Install Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.10'
+
+          - name: install commitizen
+            run: pip install -U commitizen
+
+          - name: Install Rust Stable
+            uses: actions-rs/toolchain@v1
+            with:
+                profile: minimal
+                toolchain: stable
+                override: true
+
+          # The release build is used in the Semantic Release step
+          - name: Build
+            uses: actions-rs/cargo@v1
+            with:
+                command: build
+                args: --release
+
+          - name: Install Semantic Release Rust
+            run: cargo install semantic-release-rust --version ${{ env.SEMREL_RUST_VERSION }}
+
+          - name: Semantic Release
+            uses: cycjimmy/semantic-release-action@v2
+            id: semantic
+            with:
+                semantic_version: 19
+                extra_plugins: |
+                    @semantic-release/exec@6
+                    @semantic-release/git@10
+            env:
+                GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_GITHUB }}
+                CARGO_REGISTRY_TOKEN: ${{ secrets.SEMREL_CRATES_IO }}
