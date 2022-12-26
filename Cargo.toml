@@ -1,5 +1,5 @@
 [package]
-name = "tictactoe"
+name = "ttt_menace"
 version = "1.0.0-alpha.1"
 edition = "2021"
 readme = "README.md"
@@ -7,13 +7,13 @@ repository = "https://github.com/AliSajid/tictactoe"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
-name = "ttt_lib"
-path = "src/tictactoe/lib.rs"
+name = "ttt_menace_lib"
+path = "src/ttt_menace/lib.rs"
 crate-type = ["lib"]
 
 [[bin]]
 name = "ttt"
-path = "src/tictactoe/main.rs"
+path = "src/ttt_menace/main.rs"
 
 [dependencies]
 
