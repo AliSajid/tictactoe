@@ -8,7 +8,6 @@ on:
       new_release_published:
         description: 'Whether a new release was published'
         required: true
-        default: 'false'
         type: string
 
 name: Upload Release Artifacts
