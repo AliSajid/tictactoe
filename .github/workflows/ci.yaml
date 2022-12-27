@@ -49,10 +49,10 @@ jobs:
             label: stable
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
         with:
           profile: minimal
           toolchain: ${{ matrix.rust }}
@@ -62,36 +62,36 @@ jobs:
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Build
         with:
           command: build
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Test
         with:
           command: test
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Format
         with:
           command: fmt
           args: --all -- --check
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Lint
         with:
           command: clippy
           args: -- -D warnings
 
       - name: Wait before badge creation
-        uses: AliSajid/random-wait-action@v1.1.0
+        uses: AliSajid/random-wait-action@4223eaaf5f578e1b80d73004fe7e7be9d83ba46e
         with:
           minimum: ${{ env.MINIMUM_WAIT }}
           maximum: ${{ env.MAXIMUM_WAIT }}
 
       - name: Create Awesome Badge - Success
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         if: success()
         with:
           auth: ${{ secrets.GIST_SECRET }}
@@ -103,7 +103,7 @@ jobs:
           color: green
 
       - name: Create Awesome Badge - Failure
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         if: failure()
         with:
           auth: ${{ secrets.GIST_SECRET }}
@@ -144,9 +144,9 @@ jobs:
             label: stable
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
         name: Install Rust
         with:
           profile: minimal
@@ -157,36 +157,36 @@ jobs:
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Build
         with:
           command: build
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Test
         with:
           command: test
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Format
         with:
           command: fmt
           args: --all -- --check
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Lint
         with:
           command: clippy
           args: -- -D warnings
 
       - name: Wait before badge creation
-        uses: AliSajid/random-wait-action@v1.1.0
+        uses: AliSajid/random-wait-action@4223eaaf5f578e1b80d73004fe7e7be9d83ba46e
         with:
           minimum: ${{ env.MINIMUM_WAIT }}
           maximum: ${{ env.MAXIMUM_WAIT }}
 
       - name: Create Awesome Badge - Success
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         if: success()
         with:
           auth: ${{ secrets.GIST_SECRET }}
@@ -198,7 +198,7 @@ jobs:
           color: green
 
       - name: Create Awesome Badge - Failure
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         if: failure()
         with:
           auth: ${{ secrets.GIST_SECRET }}
@@ -239,9 +239,9 @@ jobs:
             label: stable
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
         name: Install Rust
         with:
           profile: minimal
@@ -252,37 +252,37 @@ jobs:
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Build
         with:
           command: build
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Test
         with:
           command: test
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Format
         with:
           command: fmt
           args: --all -- --check
 
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
         name: Lint
         with:
           command: clippy
           args: -- -D warnings
 
       - name: Wait before badge creation
-        uses: AliSajid/random-wait-action@v1.1.0
+        uses: AliSajid/random-wait-action@4223eaaf5f578e1b80d73004fe7e7be9d83ba46e
         with:
           minimum: ${{ env.MINIMUM_WAIT }}
           maximum: ${{ env.MAXIMUM_WAIT }}
 
       - name: Create Awesome Badge - Success
         id: result
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: ${{ env.GIST_KEY }}
@@ -293,7 +293,7 @@ jobs:
           color: green
 
       - name: Create Awesome Badge - Failure
-        uses: schneegans/dynamic-badges-action@v1.4.0
+        uses: schneegans/dynamic-badges-action@5d424ad4060f866e4d1dab8f8da0456e6b1c4f56
         if: failure()
         with:
           auth: ${{ secrets.GIST_SECRET }}
