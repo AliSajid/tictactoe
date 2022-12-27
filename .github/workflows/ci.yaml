@@ -19,8 +19,8 @@ concurrency:
 env:
   GIST_KEY: 185618f862b98debb8b034c34e83173d # pragma: allowlist secret
   RUST_BACKTRACE: 1
-  MINIMUM_WAIT: 2
-  MAXIMUM_WAIT: 5
+  MINIMUM_WAIT: 3
+  MAXIMUM_WAIT: 10
 
 jobs:
   windows-ci:
