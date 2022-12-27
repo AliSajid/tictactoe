@@ -1,6 +1,6 @@
 [package]
 name = "ttt_menace"
-version = "1.0.0-alpha.1"
+version ="1.0.0-alpha.1"
 edition = "2021"
 readme = "README.md"
 repository = "https://github.com/AliSajid/tictactoe"
