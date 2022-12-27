@@ -18,16 +18,13 @@ path = "src/ttt_menace/main.rs"
 [dependencies]
 
 
-[build]
-jobs = 1
-incremental = true
-
 [profile.dev]
 opt-level = 0
 debug = true
 debug-assertions = true
 overflow-checks = true
 lto = false
+incremental = true
 
 [profile.release]
 opt-level = 's'
@@ -37,3 +34,4 @@ strip = "symbols"
 overflow-checks = true
 lto = true
 codegen-units = 1
+incremental = false
