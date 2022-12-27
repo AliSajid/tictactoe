@@ -12,7 +12,7 @@ path = "src/ttt_menace/lib.rs"
 crate-type = ["lib"]
 
 [[bin]]
-name = "ttt"
+name = "tttm"
 path = "src/ttt_menace/main.rs"
 
 [dependencies]
