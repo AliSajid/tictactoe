@@ -50,6 +50,9 @@
 // *
 // *
 
+use ttt_menace_lib::Board;
+
 fn main() {
-    println!("Hello, world!");
+    let board = Board::new();
+    board.print();
 }
