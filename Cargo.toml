@@ -8,14 +8,9 @@ description = "Tic Tac Toe game with a Menace AI"
 license = "Dual MIT/Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[lib]
-name = "ttt_menace_lib"
-path = "src/ttt_menace/lib.rs"
-crate-type = ["lib"]
-
 [[bin]]
 name = "tttm"
-path = "src/ttt_menace/main.rs"
+path = "src/main.rs"
 
 [dependencies]
 
