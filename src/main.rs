@@ -50,88 +50,11 @@
 // *
 // *
 
-#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
-#[allow(dead_code)]
-enum SquareValue {
-    X,
-    O,
-    Empty,
-}
+mod components;
 
-impl std::fmt::Display for SquareValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        match self {
-            SquareValue::X => write!(f, " X "),
-            SquareValue::O => write!(f, " O "),
-            SquareValue::Empty => write!(f, "   "),
-        }
-    }
-}
+use components::Board;
 
-#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
-struct Square {
-    value: SquareValue,
-}
-
-pub struct Board {
-    board: [Square; 9],
-}
-
-impl Board {
-    pub fn new() -> Board {
-        Board {
-            board: [
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-                Square {
-                    value: SquareValue::Empty,
-                },
-            ],
-        }
-    }
-
-    pub fn print(&self) {
-        println!(
-            "{}|{}|{}",
-            self.board[0].value, self.board[1].value, self.board[2].value
-        );
-        println!("-----------");
-        println!(
-            "{}|{}|{}",
-            self.board[3].value, self.board[4].value, self.board[5].value
-        );
-        println!("-----------");
-        println!(
-            "{}|{}|{}",
-            self.board[6].value, self.board[7].value, self.board[8].value
-        );
-    }
-}
-
-impl Default for Board {
-    fn default() -> Self {
-        Self::new()
-    }
+fn main() {
+    let board = Board::new();
+    board.print();
 }
