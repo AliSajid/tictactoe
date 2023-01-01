@@ -51,10 +51,12 @@
 // *
 
 mod components;
+mod gameplay;
 
-use components::Board;
+use gameplay::Game;
 
 fn main() {
-    let board = Board::new();
-    board.print();
+    let game = Game::new();
+
+    game.board().print();
 }
