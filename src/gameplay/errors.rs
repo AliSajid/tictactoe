@@ -65,3 +65,9 @@ impl GameError {
         }
     }
 }
+
+impl Display for GameError {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
+        write!(f, "{}", self.to_string())
+    }
+}
