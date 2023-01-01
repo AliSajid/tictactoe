@@ -124,21 +124,21 @@ mod tests {
     #[test]
     fn test_is_empty() {
         let square = Square::new();
-        assert_eq!(square.is_empty(), true);
+        assert!(square.is_empty());
     }
 
     #[test]
     fn test_is_x() {
         let mut square = Square::new();
         square.set_x();
-        assert_eq!(square.is_x(), true);
+        assert!(square.is_x());
     }
 
     #[test]
     fn test_is_o() {
         let mut square = Square::new();
         square.set_o();
-        assert_eq!(square.is_o(), true);
+        assert!(square.is_o());
     }
 
     #[test]
