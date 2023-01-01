@@ -176,4 +176,24 @@ mod tests {
         square.set_empty();
         assert_eq!(square.get_value(), SquareValue::Empty);
     }
+
+    #[test]
+    fn test_display() {
+        let mut square = Square::new();
+        square.set_x();
+        assert_eq!(format!("{}", square), " X ");
+    }
+
+    #[test]
+    fn test_default() {
+        let square = Square::default();
+        assert_eq!(square.value, SquareValue::Empty);
+    }
+
+    #[test]
+    fn test_eq() {
+        let square1 = Square::new();
+        let square2 = Square::new();
+        assert_eq!(square1, square2);
+    }
 }
