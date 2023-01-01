@@ -55,6 +55,7 @@ use super::player::Player;
 use super::player::Symbol;
 use crate::components::Board;
 
+#[allow(dead_code)]
 pub struct Game {
     player_x: Player,
     player_o: Player,
@@ -74,10 +75,12 @@ impl Game {
         }
     }
 
+    #[allow(dead_code)]
     pub fn play(&mut self) -> Result<(), GameError> {
         todo!("Implement the play method");
     }
 
+    #[allow(dead_code)]
     pub fn winner(&self) -> Option<Player> {
         self.winner
     }
