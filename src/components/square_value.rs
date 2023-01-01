@@ -80,4 +80,11 @@ mod tests {
         assert_eq!(format!("{}", SquareValue::O), " O ");
         assert_eq!(format!("{}", SquareValue::Empty), "   ");
     }
+
+    #[test]
+    fn test_eq() {
+        assert_eq!(SquareValue::X, SquareValue::X);
+        assert_eq!(SquareValue::O, SquareValue::O);
+        assert_eq!(SquareValue::Empty, SquareValue::Empty);
+    }
 }
