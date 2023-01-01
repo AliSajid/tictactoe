@@ -57,6 +57,7 @@ pub struct Player {
     pub symbol: Symbol,
 }
 
+#[allow(dead_code)]
 impl Player {
     pub fn new(symbol: &str) -> Self {
         match symbol {

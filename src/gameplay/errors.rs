@@ -52,6 +52,7 @@
 
 use std::fmt::{Display, Error, Formatter};
 
+#[allow(dead_code)]
 #[derive(Debug)]
 pub enum GameError {
     SquareAlreadyPlayed,
