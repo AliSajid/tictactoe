@@ -50,30 +50,32 @@
 // *
 // *
 
-mod errors;
+use super::errors::GameError;
+use super::player::Player;
+use super::player::Symbol;
+use crate::components::Board;
 
-struct Game {
+pub struct Game {
     player_x: Player,
     player_o: Player,
     board: Board,
-    current_player: Player,
     winner: Option<Player>,
 }
 
 impl Game {
     pub fn new() -> Self {
+        let current_player = Player { symbol: Symbol::X };
+        let other_player = Player { symbol: Symbol::O };
         Self {
-            player_x: Player.new("X"),
-            player_o: Player.new("O"),
+            player_x: current_player,
+            player_o: other_player,
             board: Board::new(),
-            current_player: self.player_x,
             winner: None,
         }
     }
 
-    pub fn play(&mut self, square: Square) -> Result<(), GameError> {
+    pub fn play(&mut self) -> Result<(), GameError> {
         todo!("Implement the play method");
-        Ok(())
     }
 
     pub fn winner(&self) -> Option<Player> {
