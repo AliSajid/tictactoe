@@ -55,3 +55,13 @@ enum GameError {
     InvalidSquare,
     GameAlreadyWon,
 }
+
+impl GameError {
+    fn to_string(&self) -> String {
+        match self {
+            GameError::SquareAlreadyPlayed => "Square already played".to_string(),
+            GameError::InvalidSquare => "Invalid square".to_string(),
+            GameError::GameAlreadyWon => "Game already won".to_string(),
+        }
+    }
+}
