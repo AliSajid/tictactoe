@@ -50,24 +50,21 @@
 // *
 // *
 
-enum GameError {
+use std::fmt::{Display, Error, Formatter};
+
+#[derive(Debug)]
+pub enum GameError {
     SquareAlreadyPlayed,
     InvalidSquare,
     GameAlreadyWon,
 }
 
-impl GameError {
-    fn to_string(&self) -> String {
-        match self {
-            GameError::SquareAlreadyPlayed => "Square already played".to_string(),
-            GameError::InvalidSquare => "Invalid square".to_string(),
-            GameError::GameAlreadyWon => "Game already won".to_string(),
-        }
-    }
-}
-
 impl Display for GameError {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{}", self.to_string())
+        match &self {
+            GameError::SquareAlreadyPlayed => write!(f, "Square already played"),
+            GameError::InvalidSquare => write!(f, "Invalid square"),
+            GameError::GameAlreadyWon => write!(f, "Game already won"),
+        }
     }
 }
