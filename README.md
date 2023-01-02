@@ -1,10 +1,18 @@
 
 # Tictactoe
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliSajid/tictactoe)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/tictactoe)
-[![Continuous integration](https://github.com/AliSajid/tictactoe/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/AliSajid/tictactoe/actions/workflows/ci.yaml)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/AliSajid/ttt_menace?include_prereleases)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/ttt_menace)
+[![Continuous integration](https://github.com/AliSajid/ttt_menace/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliSajid/ttt_menace/actions/workflows/ci.yaml)
 [![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
+
+
+![GitHub issues](https://img.shields.io/github/issues/AliSajid/ttt_menace)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AliSajid/ttt_menace)
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/AliSajid/ttt_menace)
+![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/AliSajid/ttt_menace/latest?include_prereleases&sort=semver)
+![GitHub contributors](https://img.shields.io/github/contributors/AliSajid/ttt_menace)
+
 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
