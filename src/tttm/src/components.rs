@@ -50,10 +50,9 @@
 // *
 // *
 
-mod errors;
-mod game;
-mod player;
+mod board;
+mod square;
+mod square_value;
 
-pub use game::Game;
-pub use player::Player;
-pub use player::Symbol;
+pub use self::board::Board;
+pub use self::square::Square;
