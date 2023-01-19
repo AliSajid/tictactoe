@@ -13,10 +13,6 @@
 ![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/AliSajid/ttt_menace/latest?include_prereleases&sort=semver)
 ![GitHub contributors](https://img.shields.io/github/contributors/AliSajid/ttt_menace)
 
-
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
-
 This is a toy project to create a Tic Tac Toe game that can be played by any two players. The ultimate intention here is to create the game in such
 a way that it can be played by a human and a computer. The computer will be using the MENACE algorithm to learn how to play the game.
 
@@ -81,6 +77,10 @@ The project is currently in the early stages of development. The following is a 
 ## Contributing
 
 Contributions to the project are welcome. Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
+
+This project is Gitpod-enabled. You can use Gitpod to contribute to the project without having to install any dependencies on your local machine. Simply click on the button below to start a Gitpod workspace.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
 
 ## License
 
