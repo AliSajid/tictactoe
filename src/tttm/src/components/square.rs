@@ -1,10 +1,7 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // * Copyright (c) 2022
 // *
-// *
 // * This project is dual-licensed under the MIT and Apache licenses.
-// *
-// *
 // *
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // ** APACHE 2.0 LICENSE
@@ -21,9 +18,6 @@
 // * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // * See the License for the specific language governing permissions and
 // * limitations under the License.
-// *
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// *
 // *
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // ** MIT LICENSE
@@ -47,8 +41,6 @@
 // * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// *
-// *
 
 use super::square_value::SquareValue;
 use std::fmt::{self, Display, Formatter};
