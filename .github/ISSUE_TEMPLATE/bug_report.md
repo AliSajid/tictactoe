@@ -23,10 +23,10 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
+**Versions (please complete the following information):**
  - OS: [e.g. macos, linux, windows]
  - OS Version / Distribution: [e.g. 10.15.7, Ubuntu 20.04, Windows 10]
- - Version [e.g. 0.1.0]
+ - Release Version [e.g. 0.1.0]
 
 **Additional context**
 Add any other context about the problem here.
