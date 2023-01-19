@@ -69,7 +69,8 @@ impl Game {
 
     #[allow(dead_code)]
     pub fn play(&mut self) -> Result<(), GameError> {
-        todo!("Implement the play method");
+        self.board.get_square(2, 2).set_value(Symbol::X);
+        Ok(())
     }
 
     #[allow(dead_code)]

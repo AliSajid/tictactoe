@@ -42,6 +42,8 @@
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+use crate::gameplay::Symbol;
+
 use super::square_value::SquareValue;
 use std::fmt::{self, Display, Formatter};
 
@@ -80,8 +82,11 @@ impl Square {
         self.value
     }
 
-    fn set_value(&mut self, value: SquareValue) {
-        self.value = value;
+    pub fn set_value(&mut self, value: Symbol) {
+        match value {
+            Symbol::X => self.value = SquareValue::X,
+            Symbol::O => self.value = SquareValue::O,
+        }
     }
 
     fn set_x(&mut self) {
@@ -143,7 +148,7 @@ mod tests {
     #[test]
     fn test_set_value() {
         let mut square = Square::new();
-        square.set_value(SquareValue::X);
+        square.set_value(Symbol::X);
         assert_eq!(square.get_value(), SquareValue::X);
     }
 
