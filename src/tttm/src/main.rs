@@ -54,6 +54,6 @@ fn main() {
 
     match game.play() {
         Ok(_) => game.board().print(),
-        Err(e) => println!("Error: {}", e),
+        Err(e) => println!("Error: {e}"),
     }
 }
