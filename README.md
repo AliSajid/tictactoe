@@ -27,9 +27,9 @@ a way that it can be played by a human and a computer. The computer will be usin
 | Linux    | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![Ubuntu x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-stable.json) <br/> ![Ubuntu x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-beta.json) <br/> ![Ubuntu x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-nightly.json) <br/> ![Ubuntu x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-msrv.json) |
 | Windows  | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![macos x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-stable.json) <br/> ![macos x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-beta.json) <br/> ![macos x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-nightly.json) <br/> ![macos x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-msrv.json) |
 | macOS    | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![Windows x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-stable.json) <br/> ![Windows x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-beta.json) <br/> ![Windows x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-nightly.json) <br/> ![Windows x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-msrv.json) |
+|
 
-
-## MENACE
+## [MENACE](https://en.wikipedia.org/wiki/MENACE)
 
 Machine Educable Noughts and Crosses Engine (MENACE) is one of the first implementations of a mchine learning system. It was developed by
 Donald Michie in 1961. The original system was developed using a stack of matchboxes over a period of time and was called Matchbox Educable
@@ -46,10 +46,13 @@ More information on MENACE can be found [here](https://en.wikipedia.org/wiki/MEN
 
 ## Project Structure
 
-The project is structured as follows:
+This project uses Cargo's workspace feature to organize the project into multiple crates. The following is a brief description of each crate:
 
-- A binary crate called `tttm` which contains the main executable called `tttm`.
-- A librrary crate called `ttt_menace_lib` which contains the core logic of the game, alongwith the replaceable player logic.
+- `tttm`: This is a binary crate tasked with actually running the game. This crate is planned to host the player interactions with the GUI or TUI, as it progresses.
+- `lib_ttt`: This is a library crate that contains the core logic of the game. This crate is responsible for the game logic, the game state, and the game rules.
+- `lib_player`: This is a library crate that serves two purposes. First, it provides a common interface for the different types of players that can be _plugged into_ the game. Second, it provides a basic implementation for a human player.
+- `lib_menace_c`: This is a library crate that implements the MENACE-C system. The implementation of this system is based on the interface defined in `lib_player`.
+- `lib_menace_s`: This is a library crate that implements the MENACE-S system. The implementation of this system is based on the interface defined in `lib_player`.
 
 ## MENACE Implementation
 
@@ -67,12 +70,33 @@ Additionally, the original MENACE implementation used a manually curated list of
 
 The project is currently in the early stages of development. The following is a list of features that will be implemented in the future:
 
-- [ ] Implement the core logic of the game.
-- [ ] Implement the MENACE-C system.
-- [ ] Implement the MENACE-S system.
-- [ ] Implement the CLI.
-- [ ] Add a TUI using [tui-rs](https://github.com/fdehau/tui-rs)
+- [ ] [Implement the base game logic](https://github.com/AliSajid/ttt_menace/milestone/1).
+- [ ] [Implement the human player](https://github.com/AliSajid/ttt_menace/milestone/2).
+- [ ] [Implement the MENACE-C system](https://github.com/AliSajid/ttt_menace/milestone/3).
+- [ ] [Implement the MENACE-S system](https://github.com/AliSajid/ttt_menace/milestone/4).
+- [ ] [Implement the CLI](https://github.com/AliSajid/ttt_menace/milestone/5).
+- [ ] [Add a TUI](https://github.com/AliSajid/ttt_menace/milestone/6). (Likely using [tui-rs](https://github.com/fdehau/tui-rs)).
+- [ ] [Add a GUI](https://github.com/AliSajid/ttt_menace/milestone/7). (Implementation details TBD)
 
 ## Contributing
 
 Contributions to the project are welcome. Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
+
+## License
+
+This project is dual-licensed under the [MIT License](LICENSE-MIT) and the [Apache License (Version 2.0)](LICENSE-APACHE).
+
+## Code of Conduct
+
+This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+## Acknowledgements
+
+This project would not be possible without the efforts of the Rust Community for outreach and training.
+
+I would specifically mention the following people and projects:
+
+- Chris Krycho and the [New Rustacean](https://newrustacean.com/) Podcast.
+- Bogdan Pshonyak and the [Let's Get Rusty](https://www.youtube.com/c/letsgetrusty) YouTube Channel.
+- Tris Oaten (NAMTAO) and his [No Boilerplate](https://www.youtube.com/c/NoBoilerplate) YouTube Channel.
+- My loving family for their support and encouragement.
