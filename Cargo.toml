@@ -1,20 +1,31 @@
-[package]
-name = "ttt_menace"
-version ="1.0.0-alpha.5"
+[workspace]
+members = [
+    "src/tttm",
+    "src/lib_menace_c",
+    "src/lib_menace_s",
+    "src/lib_player",
+    "src/lib_ttt",
+]
+
+[workspace.package]
+authors = ["Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"]
+categories = ["game"]
+description = "Tic Tac Toe game with a Menace AI"
+documentation = "https://docs.rs/crate/ttt_menace"
 edition = "2021"
+homepage = "https://aliimami.com/ttt_menace"
+keywords = ["tictactoe", "menace", "rust"]
+license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/AliSajid/tictactoe"
-description = "Tic Tac Toe game with a Menace AI"
-license = "MIT OR Apache-2.0"
+version ="1.0.0-alpha.5"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
-name = "tttm"
-path = "src/main.rs"
-
-[dependencies]
+[workspace.dependencies]
 log = "0.4.17"
-
+rand = "0.8.5"
+env_logger = "0.10.0"
+serde = "1.0.152"
+serde_json = "1.0.91"
 
 [profile.dev]
 opt-level = 0

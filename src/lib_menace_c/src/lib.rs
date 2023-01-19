@@ -49,10 +49,3 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // *
 // *
-
-mod board;
-mod square;
-mod square_value;
-
-pub use board::Board;
-pub use square::Square;
