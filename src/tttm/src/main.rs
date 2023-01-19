@@ -48,7 +48,12 @@ mod gameplay;
 use gameplay::Game;
 
 fn main() {
-    let game = Game::new();
+    let mut game = Game::new();
 
     game.board().print();
+
+    match game.play() {
+        Ok(_) => game.board().print(),
+        Err(e) => println!("Error: {}", e),
+    }
 }

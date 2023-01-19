@@ -90,7 +90,7 @@ impl Board {
         }
     }
 
-    fn get_square(&self, row: usize, column: usize) -> Square {
+    pub fn get_square(&self, row: usize, column: usize) -> Square {
         self.squares[row][column]
     }
 
