@@ -3,7 +3,7 @@ members = [
     "src/tttm",
     "src/lib_menace_c",
     "src/lib_menace_s",
-    "src/lib_player",
+    "src/ticatactoe_menace_player",
     "src/ticatactoe_menace",
 ]
 
