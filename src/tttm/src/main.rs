@@ -42,18 +42,6 @@
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-mod components;
-mod gameplay;
-
-use gameplay::Game;
-
 fn main() {
-    let mut game = Game::new();
-
-    game.board().print();
-
-    match game.play() {
-        Ok(_) => game.board().print(),
-        Err(e) => println!("Error: {e}"),
-    }
+    println!("Hello, world!");
 }
