@@ -44,4 +44,4 @@
 
 mod player;
 
-pub use player::Player;
+pub use crate::player::Player;
