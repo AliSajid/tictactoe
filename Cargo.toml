@@ -9,7 +9,7 @@ members = [
 
 [workspace.package]
 authors = ["Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"]
-categories = ["game"]
+categories = ["game", "ai", "tictactoe", "menace"]
 description = "Tic Tac Toe game with a Menace AI"
 documentation = "https://docs.rs/crate/ttt_menace"
 edition = "2021"
