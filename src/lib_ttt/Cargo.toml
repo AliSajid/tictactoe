@@ -1,5 +1,5 @@
 [package]
-name = "ttt"
+name = "ticatactoe_menace"
 authors.workspace = true
 categories.workspace = true
 description.workspace = true
