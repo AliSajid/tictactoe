@@ -3,22 +3,22 @@
 version = 3
 
 [[package]]
-name = "menace_c"
+name = "ticatactoe_menace"
 version = "1.0.0-alpha.5"
 
 [[package]]
-name = "menace_s"
+name = "ticatactoe_menace_c"
 version = "1.0.0-alpha.5"
 
 [[package]]
-name = "player"
+name = "ticatactoe_menace_player"
 version = "1.0.0-alpha.5"
 dependencies = [
- "ttt",
+ "ticatactoe_menace",
 ]
 
 [[package]]
-name = "ttt"
+name = "ticatactoe_menace_s"
 version = "1.0.0-alpha.5"
 
 [[package]]
