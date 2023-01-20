@@ -1,10 +1,10 @@
 [workspace]
 members = [
     "src/tttm",
-    "src/ticatactoe_menace_c",
-    "src/ticatactoe_menace_s",
-    "src/ticatactoe_menace_player",
-    "src/ticatactoe_menace",
+    "src/tictactoe_menace_c",
+    "src/tictactoe_menace_s",
+    "src/tictactoe_menace_player",
+    "src/lib_tictactoe_menace",
 ]
 
 [workspace.package]

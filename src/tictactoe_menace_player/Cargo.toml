@@ -1,5 +1,5 @@
 [package]
-name = "ticatactoe_menace_c"
+name = "tictactoe_menace_player"
 authors.workspace = true
 categories.workspace = true
 description.workspace = true
@@ -13,5 +13,8 @@ repository.workspace = true
 version= "1.0.0-alpha.5"
 
 [lib]
-name = "menace_c"
+name = "player"
 path = "src/lib.rs"
+
+[dependencies]
+lib_tictactoe_menace = { path = "../lib_tictactoe_menace" }
