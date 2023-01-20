@@ -1,5 +1,5 @@
 [package]
-name = "ticatactoe_menace"
+name = "tictactoe_menace_s"
 authors.workspace = true
 categories.workspace = true
 description.workspace = true
@@ -13,5 +13,5 @@ repository.workspace = true
 version= "1.0.0-alpha.5"
 
 [lib]
-name = "ttt"
+name = "menace_s"
 path = "src/lib.rs"
