@@ -44,10 +44,10 @@ More information on MENACE can be found [here](https://en.wikipedia.org/wiki/MEN
 This project uses Cargo's workspace feature to organize the project into multiple crates. The following is a brief description of each crate:
 
 - `tttm`: This is a binary crate tasked with actually running the game. This crate is planned to host the player interactions with the GUI or TUI, as it progresses.
-- `lib_ttt`: This is a library crate that contains the core logic of the game. This crate is responsible for the game logic, the game state, and the game rules.
-- `lib_player`: This is a library crate that serves two purposes. First, it provides a common interface for the different types of players that can be _plugged into_ the game. Second, it provides a basic implementation for a human player.
-- `lib_menace_c`: This is a library crate that implements the MENACE-C system. The implementation of this system is based on the interface defined in `lib_player`.
-- `lib_menace_s`: This is a library crate that implements the MENACE-S system. The implementation of this system is based on the interface defined in `lib_player`.
+- `lib_tictactoe_menace`: This is a library crate that contains the core logic of the game. This crate is responsible for the game logic, the game state, and the game rules.
+- `tictactoe_menace_player`: This is a library crate that serves two purposes. First, it provides a common interface for the different types of players that can be _plugged into_ the game. Second, it provides a basic implementation for a human player.
+- `tictactoe_menace_c`: This is a library crate that implements the MENACE-C system. The implementation of this system is based on the interface defined in `tictactoe_menace_player`.
+- `tictactoe_menace_s`: This is a library crate that implements the MENACE-S system. The implementation of this system is based on the interface defined in `tictactoe_menace_player`.
 
 ## MENACE Implementation
 
