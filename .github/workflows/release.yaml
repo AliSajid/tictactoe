@@ -25,17 +25,6 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
-            with:
-                fetch-depth: 0
-                persist-credentials: false
-
-          - name: Install Rust Stable
-            uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
-            if: needs.check_release.outputs.new-release-published == 'true'
-            with:
-                profile: minimal
-                toolchain: stable
-                override: true
 
           - name: Install Semantic Release Cargo
             run: cargo install semantic-release-cargo --version ${{ env.SEMREL_RUST_VERSION }}
