@@ -42,10 +42,41 @@
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-mod board;
-mod square;
-mod square_value;
+use std::fmt;
 
-pub use board::Board;
-pub use square::Square;
-pub use square_value::SquareValue;
+#[allow(dead_code)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum SquareValue {
+    Empty,
+    X,
+    O,
+}
+
+impl fmt::Display for SquareValue {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            SquareValue::X => write!(f, " X "),
+            SquareValue::O => write!(f, " O "),
+            SquareValue::Empty => write!(f, "   "),
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_display() {
+        assert_eq!(format!("{}", SquareValue::X), " X ");
+        assert_eq!(format!("{}", SquareValue::O), " O ");
+        assert_eq!(format!("{}", SquareValue::Empty), "   ");
+    }
+
+    #[test]
+    fn test_eq() {
+        assert_eq!(SquareValue::X, SquareValue::X);
+        assert_eq!(SquareValue::O, SquareValue::O);
+        assert_eq!(SquareValue::Empty, SquareValue::Empty);
+    }
+}

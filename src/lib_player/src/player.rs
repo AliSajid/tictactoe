@@ -42,10 +42,9 @@
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-mod board;
-mod square;
-mod square_value;
+use ttt::Board;
 
-pub use board::Board;
-pub use square::Square;
-pub use square_value::SquareValue;
+pub trait Player {
+    fn new() -> Self;
+    fn play(&self, board: &Board) -> Option<String>;
+}
