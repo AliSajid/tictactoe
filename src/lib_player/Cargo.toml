@@ -1,5 +1,5 @@
 [package]
-name = "player"
+name = "ticatactoe_menace_player"
 authors.workspace = true
 categories.workspace = true
 description.workspace = true
@@ -17,4 +17,4 @@ name = "player"
 path = "src/lib.rs"
 
 [dependencies]
-ttt = { path = "../lib_ttt" }
+ticatactoe_menace = { path = "../lib_ttt" }
