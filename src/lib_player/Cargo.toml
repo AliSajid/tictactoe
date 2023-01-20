@@ -17,4 +17,4 @@ name = "player"
 path = "src/lib.rs"
 
 [dependencies]
-ticatactoe_menace = { path = "../lib_ttt" }
+ticatactoe_menace = { path = "../ticatactoe_menace" }
