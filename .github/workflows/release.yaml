@@ -29,29 +29,30 @@ jobs:
                 fetch-depth: 0
                 persist-credentials: false
 
-          - name: Configure Node.js
-            uses: actions/setup-node@v3
+          - name: Install Rust Stable
+            uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
+            if: needs.check_release.outputs.new-release-published == 'true'
             with:
-              node-version: lts/*
+                profile: minimal
+                toolchain: stable
+                override: true
 
-          - name: Install is-semantic-release-configured
-            uses: EricCrosson/install-github-release-binary@v2
+          - name: Install Semantic Release Cargo
+            run: cargo install semantic-release-cargo --version ${{ env.SEMREL_RUST_VERSION }}
+
+          - name: Semantic Release
+            uses: cycjimmy/semantic-release-action@8f6ceb9d5aae5578b1dcda6af00008235204e7fa
+            id: get-next-version
             with:
-              targets: EricCrosson/is-semantic-release-configured@v1
-
-          - run: |
-              : Check for conflicting semantic-release configuration
-              if is-semantic-release-configured; then
-                echo "::warning title=Invalid precondition::Expected semantic-release to not be configured at this point in this action's execution"
-              fi
-            shell: bash
-
-          - id: get-next-version
-            run: |
-              : calculate next semantic-release version
-              ${semantic_release} --dry-run --verify-conditions semantic-release-export-data --generate-notes semantic-release-export-data
-            shell: bash
-
+                semantic_version: 19
+                dry_run: true
+                extra_plugins: |
+                    @semantic-release/exec@6
+                    @semantic-release/git@10
+                    @semantic-release-cargo/semantic-release-cargo@2
+            env:
+                GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_GITHUB }}
+                CARGO_REGISTRY_TOKEN: ${{ secrets.SEMREL_CRATES_IO }}
     release:
         name: Semantic Release
         needs: check_release
@@ -89,7 +90,7 @@ jobs:
                 command: build
                 args: --release
 
-          - name: Install Semantic Release Rust
+          - name: Install Semantic Release Cargo
             if: needs.check_release.outputs.new-release-published == 'true'
             run: cargo install semantic-release-cargo --version ${{ env.SEMREL_RUST_VERSION }}
 
