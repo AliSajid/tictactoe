@@ -4,7 +4,7 @@ members = [
     "src/lib_menace_c",
     "src/lib_menace_s",
     "src/lib_player",
-    "src/lib_ttt",
+    "src/ticatactoe_menace",
 ]
 
 [workspace.package]
