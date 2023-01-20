@@ -10,7 +10,7 @@ keywords.workspace = true
 license.workspace = true
 readme.workspace = true
 repository.workspace = true
-version.workspace = true
+version= "1.0.0-alpha.5"
 
 [lib]
 name = "ttt"
