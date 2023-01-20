@@ -15,3 +15,6 @@ version= "1.0.0-alpha.5"
 [lib]
 name = "player"
 path = "src/lib.rs"
+
+[dependencies]
+ttt = { path = "../lib_ttt" }
