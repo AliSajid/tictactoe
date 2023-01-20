@@ -13,6 +13,9 @@ version = "1.0.0-alpha.5"
 [[package]]
 name = "player"
 version = "1.0.0-alpha.5"
+dependencies = [
+ "ttt",
+]
 
 [[package]]
 name = "ttt"
