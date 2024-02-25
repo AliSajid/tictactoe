@@ -36,7 +36,7 @@ License: CC0-1.0
 
 Files: licenses_report.json
 Copyright: 2022 - 2024 Ali Sajid Imami
-License: CC0-1.0
+License: Apache-2.0 AND MIT
 
 Files: .gitpod.Dockerfile
 Copyright: 2022 - 2024 Ali Sajid Imami
