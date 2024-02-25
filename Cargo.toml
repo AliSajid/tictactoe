@@ -26,12 +26,12 @@ name = "ttrustle"
 path = "src/ttrustle/main.rs"
 
 [dependencies]
+color-eyre = "0.6.2"
+env_logger = "0.11.2"
+log = "0.4.20"
 rand = "0.8.5"
 serde = "1.0.152"
 serde_json = "1.0.91"
-color-eyre = "0.6.2"
-log = "0.4.20"
-env_logger = "0.11.2"
 
 [dev-dependencies]
 rstest = "0.18.2"

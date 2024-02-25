@@ -1,7 +1,8 @@
 <!--
 SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
 
-SPDX-License-Identifier: CC0-1.0
+SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: MIT
 -->
 
 # Tic-Tac-Rustle - A Tic Tac Toe Game with MENACE
