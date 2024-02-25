@@ -1,0 +1,18 @@
+{
+    "cSpell.words": [
+        "Bogdan",
+        "Krycho",
+        "Michie",
+        "NAMTAO",
+        "Pshonyak",
+        "Rustacean",
+        "tictactoe",
+        "tttm",
+        "valeignore"
+    ],
+    "rust-analyzer.linkedProjects": [
+        "./src/tttm/Cargo.toml",
+        "./src/tttm/Cargo.toml",
+        "./src/tttm/Cargo.toml"
+    ]
+}
