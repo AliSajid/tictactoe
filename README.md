@@ -1,5 +1,5 @@
 
-# Tic Tac Toe - MENACE Edition
+# Tic-Tac-Rustle - A Tic Tac Toe Game with MENACE
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/AliSajid/ttt_menace?include_prereleases)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/ttt_menace)
@@ -26,7 +26,7 @@ a way that it can be played by a human and a computer. The computer will be usin
 
 ## [MENACE](https://en.wikipedia.org/wiki/MENACE)
 
-Machine Educable Noughts and Crosses Engine (MENACE) is one of the first implementations of a mchine learning system. It was developed by
+Machine Educable Noughts and Crosses Engine (MENACE) is one of the first implementations of a machine learning system. It was developed by
 Donald Michie in 1961. The original system was developed using a stack of matchboxes over a period of time and was called Matchbox Educable
 Noughts and Crosses Engine (MENACE).
 
