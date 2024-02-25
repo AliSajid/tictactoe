@@ -7,17 +7,12 @@ SPDX-License-Identifier: MIT
 
 # Tic-Tac-Rustle - A Tic Tac Toe Game with MENACE
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/AliSajid/ttt_menace?include_prereleases)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/ttt_menace)
-[![Continuous integration](https://github.com/AliSajid/ttt_menace/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliSajid/ttt_menace/actions/workflows/ci.yaml)
-[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
-
-
-![GitHub issues](https://img.shields.io/github/issues/AliSajid/ttt_menace)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AliSajid/ttt_menace)
-![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/AliSajid/ttt_menace)
-![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/AliSajid/ttt_menace/latest?include_prereleases&sort=semver)
-![GitHub contributors](https://img.shields.io/github/contributors/AliSajid/ttt_menace)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/AliSajid/tictacrustle?include_prereleases)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/tictacrustle)
+[![Continuous integration](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml)
+[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/AliSajid/tictacrustle)
+![GitHub issues](https://img.shields.io/github/issues/AliSajid/tictacrustle)
+![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Ftictacrustle)
 
 This is a toy project to create a Tic Tac Toe game that can be played by any two players. The ultimate intention here is to create the game in such
 a way that it can be played by a human and a computer. The computer will be using the MENACE algorithm to learn how to play the game.
@@ -71,13 +66,13 @@ Additionally, the original MENACE implementation used a manually curated list of
 
 The project is currently in the early stages of development. The following is a list of features that will be implemented in the future:
 
-- [ ] [Implement the base game logic](https://github.com/AliSajid/ttt_menace/milestone/1).
-- [ ] [Implement the human player](https://github.com/AliSajid/ttt_menace/milestone/2).
-- [ ] [Implement the MENACE-C system](https://github.com/AliSajid/ttt_menace/milestone/3).
-- [ ] [Implement the MENACE-S system](https://github.com/AliSajid/ttt_menace/milestone/4).
-- [ ] [Implement the CLI](https://github.com/AliSajid/ttt_menace/milestone/5).
-- [ ] [Add a TUI](https://github.com/AliSajid/ttt_menace/milestone/6). (Likely using [tui-rs](https://github.com/fdehau/tui-rs)).
-- [ ] [Add a GUI](https://github.com/AliSajid/ttt_menace/milestone/7). (Implementation details TBD)
+- [ ] [Implement the base game logic](https://github.com/AliSajid/tictacrustle/milestone/1).
+- [ ] [Implement the human player](https://github.com/AliSajid/tictacrustle/milestone/2).
+- [ ] [Implement the MENACE-C system](https://github.com/AliSajid/tictacrustle/milestone/3).
+- [ ] [Implement the MENACE-S system](https://github.com/AliSajid/tictacrustle/milestone/4).
+- [ ] [Implement the CLI](https://github.com/AliSajid/tictacrustle/milestone/5).
+- [ ] [Add a TUI](https://github.com/AliSajid/tictacrustle/milestone/6). (Likely using [tui-rs](https://github.com/fdehau/tui-rs)).
+- [ ] [Add a GUI](https://github.com/AliSajid/tictacrustle/milestone/7). (Implementation details TBD)
 
 ## Contributing
 
@@ -85,7 +80,7 @@ Contributions to the project are welcome. Please see the [Contributing Guideline
 
 This project is Gitpod-enabled. You can use Gitpod to contribute to the project without having to install any dependencies on your local machine. Simply click on the button below to start a Gitpod workspace.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AliSajid/ttt_menace)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AliSajid/tictacrustle)
 
 ## License
 
