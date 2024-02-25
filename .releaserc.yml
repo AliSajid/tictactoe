@@ -1,21 +1,44 @@
+---
 branches:
-  - v[0-9]+.[0-9]+.[0-9]+
-  - main
-  - next
-  - next-major
-  - name: beta
-    prerelease: true
-  - name: alpha
-    prerelease: true
-
+    - v[0-9]+.[0-9]+.[0-9]+
+    - main
+    - name: next
+      prerelease: true
 plugins:
     - '@semantic-release/commit-analyzer'
-    - '@semantic-release/release-notes-generator'
-    - '@semantic-release/github'
+    - - '@semantic-release/changelog'
+      - changelogFile: CHANGELOG.md
+    - - '@semantic-release/release-notes-generator'
+      - preset: conventionalcommits
+    - - '@semantic-release/github'
+      - assets:
+            - path: dist/aarch64-apple-darwin/ttrustle-aarch64-apple-darwin
+              label: ttrustle-aarch64-apple-darwin
+            - path: dist/aarch64-apple-darwin/ttrustle-bench-aarch64-apple-darwin
+              label: ttrustle-bench-aarch64-apple-darwin
+            - path: dist/aarch64-unknown-linux-gnu/ttrustle-aarch64-unknown-linux-gnu
+              label: ttrustle-aarch64-unknown-linux-gnu
+            - path: dist/aarch64-unknown-linux-gnu/ttrustle-bench-aarch64-unknown-linux-gnu
+              label: ttrustle-bench-aarch64-unknown-linux-gnu
+            - path: dist/aarch64-unknown-linux-musl/ttrustle-aarch64-unknown-linux-musl
+              label: ttrustle-aarch64-unknown-linux-musl
+            - path: dist/aarch64-unknown-linux-musl/ttrustle-bench-aarch64-unknown-linux-musl
+              label: ttrustle-bench-aarch64-unknown-linux-musl
+            - path: dist/i686-unknown-linux-gnu/ttrustle-i686-unknown-linux-gnu
+              label: ttrustle-i686-unknown-linux-gnu
+            - path: dist/i686-unknown-linux-gnu/ttrustle-bench-i686-unknown-linux-gnu
+              label: ttrustle-bench-i686-unknown-linux-gnu
+            - path: dist/i686-unknown-linux-musl/ttrustle-i686-unknown-linux-musl
+              label: ttrustle-i686-unknown-linux-musl
+            - path: dist/SHA256SUMS
+              label: SHA256SUMS
     - - '@semantic-release/exec'
-      - verifyConditionsCmd: "~/.cargo/bin/semantic-release-cargo verify-conditions"
-        generateNotes: "cz bump --files-only"
-        prepareCmd: "~/.cargo/bin/semantic-release-cargo prepare ${nextRelease.version}"
-        publishCmd: "~/.cargo/bin/semantic-release-cargo publish"
+      - verifyConditionsCmd: ~/.cargo/bin/semantic-release-cargo -v verify-conditions
+        prepareCmd: ~/.cargo/bin/semantic-release-cargo -v prepare ${nextRelease.version}
+        publishCmd: ~/.cargo/bin/semantic-release-cargo -v publish
     - - '@semantic-release/git'
-      - assets: Cargo.toml
+      - assets:
+            - Cargo.toml
+            - Cargo.lock
+            - CHANGELOG.md
+        message: 'chore(release): ${nextRelease.version} [skip ci]'
