@@ -3,8 +3,13 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
+use std::fmt::{
+    self,
+    Display,
+    Formatter,
+};
+
 use super::square_value::SquareValue;
-use std::fmt::{self, Display, Formatter};
 
 #[derive(Debug, PartialEq, Eq, Clone, Copy)]
 pub struct Square {
