@@ -47,6 +47,12 @@ repos:
           types_or: [file, rust]
           files: "Cargo.toml$"
           pass_filenames: true
+        - id: vale-lint
+          name: Run Vale linter
+          entry: vale
+          language: system
+          types: [markdown]
+          files: "^(README.md|CONTRIBUTING.md|CODE_OF_CONDUCT.md|guide/src/.*.md)$"
     - repo: https://github.com/commitizen-tools/commitizen
       rev: v3.15.0
       hooks:
