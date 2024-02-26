@@ -41,3 +41,7 @@ License: Apache-2.0 AND MIT
 Files: .gitpod.Dockerfile
 Copyright: 2022 - 2024 Ali Sajid Imami
 License: CC0-1.0
+
+Files: meta/vale-styles/config/**/*.txt
+Copyright: 2022 - 2024 Ali Sajid Imami
+License: CC0-1.0
