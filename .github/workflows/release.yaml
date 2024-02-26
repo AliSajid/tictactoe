@@ -17,8 +17,7 @@ jobs:
         strategy:
             matrix:
                 bin:
-                    - tactix
-                    - tactix-bench
+                    - ttrustle
                 build:
                     # alphabatized by target
                     - os: macOS-latest
