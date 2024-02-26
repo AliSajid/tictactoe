@@ -21,7 +21,6 @@ Files: .markdownlint.json
 Copyright: 2022 - 2024 Ali Sajid Imami
 License: CC0-1.0
 
-
 Files: Cargo.lock
 Copyright: 2022 - 2024 Ali Sajid Imami
 License: CC0-1.0
@@ -45,3 +44,7 @@ License: CC0-1.0
 Files: meta/vale-styles/config/**/*.txt
 Copyright: 2022 - 2024 Ali Sajid Imami
 License: CC0-1.0
+
+Files: .github/workflows/*.yaml
+Copyright: 2022 - 2024 Ali Sajid Imami
+License: Apache-2.0 AND MIT
