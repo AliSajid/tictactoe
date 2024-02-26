@@ -15,3 +15,6 @@ GUI
 CLI
 My
 You
+Nightly
+MSRV
+MIT
