@@ -18,13 +18,11 @@ This project develops a Tic-Tac-Toe game in Rust with MENACE AI. It offers a ser
 
 ## Builds
 
-<!-- vale write-good.Weasel = NO >
 |         | Stable | Beta | Nightly | MSRV (1.72.0) |
 | ------- | ------ | ---- | ------- | ---- |
 | Linux   | ![Ubuntu x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-stable.json) | ![Ubuntu x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-beta.json) | ![Ubuntu x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-nightly.json) | ![Ubuntu x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-msrv.json) |
 | Windows | ![Windows x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-stable.json) | ![Windows x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-beta.json) | ![Windows x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-nightly.json) | ![Windows x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-msrv.json) |
 | macos   | ![macos x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-stable.json) | ![macos x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-beta.json) | ![macos x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-nightly.json) | ![macos x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-msrv.json) |
-< vale write-good.Weasel = YES -->
 
 ## [MENACE](https://en.wikipedia.org/wiki/MENACE)
 
@@ -79,9 +77,7 @@ This project is Gitpod-enabled. You can use Gitpod to contribute to the project 
 
 ## License
 
-<!-- vale Google.Acronyms = NO >
 This project is dual-licensed under the [MIT License](LICENSES/MIT.txt) and the [Apache License (Version 2.0)](LICENSES/Apache-2.0.txt). You may choose to use this project under either license, at your discretion. Other, insignificant files are under the [CC0 License](LICENSES/CC0-1.0.txt). Please see the [LICENSES](LICENSES) directory for more information.
-< vale Google.Acronyms = YES -->
 
 This project is REUSE compliant. You can find more information about REUSE [here](https://reuse.software/).
 
@@ -89,7 +85,7 @@ This project is REUSE compliant. You can find more information about REUSE [here
 
 <!-- vale write-good.Passive = NO -->
 <!-- vale Google.Passive = NO -->
-This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, You are expected to uphold this code.
 <!-- vale Google.Passive = YES -->
 <!-- vale write-good.Passive = YES -->
 
