@@ -30,6 +30,7 @@ Cargo.lock
 
 guide/book
 
+<<<<<<< HEAD
 meta/vale-styles/**/*
 !meta/vale-styles/config
 
@@ -38,3 +39,8 @@ meta/vale-styles/**/*
 package_version_to_delete
 
 megalinter-reports/
+||||||| parent of 9dbb15b (docs: restructure the README.md)
+=======
+meta/vale-styles
+!meta/vale-styles/config/**/*
+>>>>>>> 9dbb15b (docs: restructure the README.md)
