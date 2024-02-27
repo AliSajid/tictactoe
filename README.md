@@ -7,8 +7,8 @@ SPDX-License-Identifier: MIT
 
 # Tic-Tac-Rustle - A Tic-Tac-Toe Game with MENACE
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/AliSajid/tictacrustle?include_prereleases)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/tictacrustle)
+![GitHub Release (w/pre-release)](https://img.shields.io/github/v/release/AliSajid/tictacrustle?include_prereleases&logo=semantic-release)
+![GitHub Release](https://img.shields.io/github/v/release/AliSajid/tictacrustle?logo=semantic-release)
 [![Continuous integration](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml)
 [![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/AliSajid/tictacrustle)
 ![GitHub issues](https://img.shields.io/github/issues/AliSajid/tictacrustle)
