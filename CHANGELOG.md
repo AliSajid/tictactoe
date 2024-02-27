@@ -10,7 +10,7 @@
 * **GameError:** add string conversion for GameError enum ([fbb9211](https://github.com/AliSajid/tictacrustle/commit/fbb92115aaa2951641e45b384e4bed1ee64e83d6))
 * **GameError:** implement Display for GameError ([ed9cdb2](https://github.com/AliSajid/tictacrustle/commit/ed9cdb268d4dacb5992b4900ff4b7bd45bd99399))
 * **Gameplay:** add a gameplay struct to encapsulate gameplay ([a1c1174](https://github.com/AliSajid/tictacrustle/commit/a1c11747e993b576bec8459756901d18837a607d))
-* **main:** update the main funciton to use Game instead of Board ([7dc4a6f](https://github.com/AliSajid/tictacrustle/commit/7dc4a6f77b220efa65694517657125fd79e6d55f))
+* **main:** update the main function to use Game instead of Board ([7dc4a6f](https://github.com/AliSajid/tictacrustle/commit/7dc4a6f77b220efa65694517657125fd79e6d55f))
 * **mod-components:** add a components module to the application ([02db7e5](https://github.com/AliSajid/tictacrustle/commit/02db7e5f8b6001a8c9c4a5d823f649eb6285c65c))
 * **player:** add an independent player trait ([5199a10](https://github.com/AliSajid/tictacrustle/commit/5199a10aeb00454e2351a39e41808c4a240fdce6))
 * **Player:** add the player struct to represent the player ([48ed9fb](https://github.com/AliSajid/tictacrustle/commit/48ed9fbebf5f53ba4113f4acd5334c294c58aa5e))
@@ -24,6 +24,6 @@
 
 * allow dead code for unimplemented parts ([1d99500](https://github.com/AliSajid/tictacrustle/commit/1d995001d58b4e0163f91f26203fe00d74bcf514))
 * fix a print warning ([73b3238](https://github.com/AliSajid/tictacrustle/commit/73b3238559cff6edc9604b126454461b85c14c80))
-* **GameError:** remove redundnat and shadowed implementation of Display ([4a52dc6](https://github.com/AliSajid/tictacrustle/commit/4a52dc62b7eee71cf1eb2023059349acff2ba785))
+* **GameError:** remove redundant and shadowed implementation of Display ([4a52dc6](https://github.com/AliSajid/tictacrustle/commit/4a52dc62b7eee71cf1eb2023059349acff2ba785))
 * **game:** implement game.play() ([50ac86c](https://github.com/AliSajid/tictacrustle/commit/50ac86c2f1f1e6f58abe02d30d78a879cf904ca7))
 * **player:** fix an ambiguity bug ([4d57e9b](https://github.com/AliSajid/tictacrustle/commit/4d57e9b836cd8be5bb18953dbfa657d7f736ecb3))
