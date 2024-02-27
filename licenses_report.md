@@ -3212,7 +3212,7 @@ Apache License 2.0
 
 - [indenter]( https://github.com/yaahc/indenter ) 0.3.3
 - [relative-path]( https://github.com/udoprog/relative-path ) 1.9.2
-- [tictacrustle]( https://github.com/AliSajid/tictactoe ) 1.0.0-alpha.5
+- [tictacrustle]( https://github.com/AliSajid/tictactoe ) 1.0.0-next.1
 
 #### License
 
