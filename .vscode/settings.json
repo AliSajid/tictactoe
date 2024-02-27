@@ -1,18 +1,28 @@
 {
     "cSpell.words": [
         "Bogdan",
-        "itpod",
+        "Gameplay",
         "Krycho",
         "Michie",
         "NAMTAO",
         "Pshonyak",
         "Rustacean",
         "Slint",
+        "struct",
         "tictacrustle",
         "tictactoe",
         "ttrustle",
         "ttserver",
         "tttm",
         "valeignore"
-    ]
+    ],
+    "cSpell.ignorePaths": [
+        ".git/objects",
+        ".vscode",
+        "Cargo.toml",
+        "Cargo.lock",
+        ".reuse/",
+        "meta/vale-styles/config"
+    ],
+    "vale.enableSpellcheck": true,
 }
