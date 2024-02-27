@@ -17,6 +17,9 @@ env:
 jobs:
   deploy_book:
     runs-on: ubuntu-latest
+    env:
+      PROJECT_ENVIRONMENT: ''
+      STORE_PATH: ''
     outputs:
       deployment_url: ${{ steps.output_deployment_url.outputs.deployment_url }}
     steps:
