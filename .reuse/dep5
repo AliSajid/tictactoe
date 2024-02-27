@@ -48,3 +48,7 @@ License: CC0-1.0
 Files: .github/workflows/*.yaml
 Copyright: 2022 - 2024 Ali Sajid Imami
 License: Apache-2.0 AND MIT
+
+Files: CHANGELOG.md
+Copyright: 2022 - 2024 Ali Sajid Imami
+License: CC0-1.0
