@@ -14368,7 +14368,7 @@
                 "edition": "2021",
                 "features": {},
                 "homepage": "https://aliimami.com/ttt_menace",
-                "id": "tictacrustle 1.0.0-alpha.5 (path+file:///Users/aimami/experiments/rust-projects/ttrustle)",
+                "id": "tictacrustle 1.0.0-next.1 (path+file:///Users/aimami/experiments/rust-projects/ttrustle)",
                 "keywords": [
                     "tictactoe",
                     "menace",
@@ -14416,7 +14416,7 @@
                         "test": true
                     }
                 ],
-                "version": "1.0.0-alpha.5"
+                "version": "1.0.0-next.1"
             }
         },
         {
@@ -31925,7 +31925,7 @@
                         "edition": "2021",
                         "features": {},
                         "homepage": "https://aliimami.com/ttt_menace",
-                        "id": "tictacrustle 1.0.0-alpha.5 (path+file:///Users/aimami/experiments/rust-projects/ttrustle)",
+                        "id": "tictacrustle 1.0.0-next.1 (path+file:///Users/aimami/experiments/rust-projects/ttrustle)",
                         "keywords": [
                             "tictactoe",
                             "menace",
@@ -31973,7 +31973,7 @@
                                 "test": true
                             }
                         ],
-                        "version": "1.0.0-alpha.5"
+                        "version": "1.0.0-next.1"
                     },
                     "path": null
                 }
