@@ -2,17 +2,17 @@
     "cSpell.words": [
         "automerge",
         "Bogdan",
-<<<<<<< HEAD
         "Cloudant",
-||||||| parent of 9dbb15b (docs: restructure the README.md)
-=======
         "itpod",
->>>>>>> 9dbb15b (docs: restructure the README.md)
+        "Gameplay",
+        "Cloudant",
+        "Gameplay",
         "Krycho",
         "Michie",
         "NAMTAO",
         "Pshonyak",
         "Rustacean",
+        "serde",
         "Slint",
         "struct",
         "tictacrustle",
