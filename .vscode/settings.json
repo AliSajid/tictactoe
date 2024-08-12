@@ -1,12 +1,15 @@
 {
     "cSpell.words": [
+        "automerge",
         "Bogdan",
+        "Cloudant",
         "Gameplay",
         "Krycho",
         "Michie",
         "NAMTAO",
         "Pshonyak",
         "Rustacean",
+        "serde",
         "Slint",
         "struct",
         "structfield",
