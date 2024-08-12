@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
 [package]
 name = "tictacrustle"
 authors = ["Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"]
