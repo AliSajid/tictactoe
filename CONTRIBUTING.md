@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 <!-- omit in toc -->
 # Contributing to TTT Menace
 
