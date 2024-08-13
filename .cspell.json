@@ -1,0 +1,21 @@
+{
+    "ignorePaths": [
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        "**/.pnpm-lock.json",
+        ".vscode",
+        "megalinter",
+        "package-lock.json",
+        "report",
+        "Cargo.toml",
+        "Cargo.lock"
+    ],
+    "language": "en",
+    "noConfigSearch": true,
+    "version": "0.2",
+    "words": [
+        "megalinter",
+        "oxsecurity"
+    ]
+}
