@@ -9,6 +9,11 @@ use std::fmt::{
     Formatter,
 };
 
+use anyhow::{
+    Error,
+    Result,
+};
+
 use super::square_value::SquareValue;
 
 /// `Square` is a struct that represents a square in a Tic-Tac-Toe game.
@@ -350,7 +355,31 @@ impl Display for Square {
 
 #[cfg(test)]
 mod tests {
+    use rstest::{
+        fixture,
+        rstest,
+    };
+
     use super::*;
+
+    #[fixture]
+    fn empty_square() -> Square {
+        Square::new()
+    }
+
+    #[fixture]
+    fn square_x() -> Square {
+        let mut square = Square::new();
+        square.set_x().expect("Failed to set X");
+        square
+    }
+
+    #[fixture]
+    fn square_o() -> Square {
+        let mut square = Square::new();
+        square.set_o().expect("Failed to set O");
+        square
+    }
 
     #[test]
     fn test_new() {
@@ -367,7 +396,7 @@ mod tests {
     #[test]
     fn test_is_x() {
         let mut square = Square::new();
-        square.set_x();
+        square.set_x().expect("Failed to set square to X");
         assert!(square.is_x());
     }
 
@@ -408,8 +437,17 @@ mod tests {
     #[test]
     fn test_set_x() {
         let mut square = Square::new();
-        square.set_x();
-        assert_eq!(square.get_value(), SquareValue::X);
+        let res = square.set_x();
+        assert!(square.is_x());
+        assert!(!square.is_o());
+        assert!(!square.is_empty());
+        assert!(res.is_ok());
+        let res = square.set_o();
+        assert!(res.is_err());
+        assert_eq!(res.unwrap_err().to_string(), "Square is not empty");
+        let res: Result<()> = square.set_x();
+        assert!(res.is_err());
+        assert_eq!(res.unwrap_err().to_string(), "Square is already X");
     }
 
     #[test]
@@ -436,10 +474,14 @@ mod tests {
         assert_eq!(square.get_value(), SquareValue::Empty);
     }
 
-    #[test]
-    fn test_eq() {
-        let square1 = Square::new();
-        let square2 = Square::new();
-        assert_eq!(square1, square2);
+    #[rstest]
+    #[case(empty_square(), empty_square(), true)]
+    #[case(square_x(), square_x(), true)]
+    #[case(square_o(), square_o(), true)]
+    #[case(empty_square(), square_x(), false)]
+    #[case(empty_square(), square_o(), false)]
+    #[case(square_x(), square_o(), false)]
+    fn test_eq(#[case] square1: Square, #[case] square2: Square, #[case] expected: bool) {
+        assert_eq!(square1 == square2, expected);
     }
 }

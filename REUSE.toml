@@ -32,15 +32,10 @@ path = [
     ".vale.ini",
     ".gitpod.yml",
     ".releaserc.yml",
-<<<<<<< HEAD
     ".gitpod.Dockerfile",
     ".cspell.json",
     ".jscpd.json",
     ".mega-linter.yml"
-||||||| parent of 058c1bd (build: update the project structure)
-=======
-    ".gitpod.Dockerfile"
->>>>>>> 058c1bd (build: update the project structure)
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
@@ -56,6 +51,22 @@ SPDX-License-Identifier = "CC0-1.0"
 path = [
     ".github/ISSUE_TEMPLATE/*",
     ".github/PULL_REQUEST_TEMPLATE.md"
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+    "CHANGELOG.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+    "meta/vale-styles/config/vocabularies/Custom/accept.txt"
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"

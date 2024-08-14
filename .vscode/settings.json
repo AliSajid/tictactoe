@@ -2,24 +2,14 @@
     "cSpell.words": [
         "automerge",
         "Bogdan",
-<<<<<<< HEAD
-<<<<<<< HEAD
-||||||| parent of 058c1bd (build: update the project structure)
-=======
->>>>>>> 058c1bd (build: update the project structure)
         "Cloudant",
         "Gameplay",
         "Krycho",
         "Michie",
         "NAMTAO",
         "Pshonyak",
+        "rstest",
         "Rustacean",
-        "serde",
-        "Slint",
-        "struct",
-        "structfield",
-        "tictacrustle",
-        "serde",
         "Slint",
         "struct",
         "tictacrustle",
@@ -38,4 +28,5 @@
         "meta/vale-styles/config"
     ],
     "vale.enableSpellcheck": true,
+    "rust-analyzer.showUnlinkedFileNotification": false,
 }
