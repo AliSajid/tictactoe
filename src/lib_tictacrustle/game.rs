@@ -3,16 +3,14 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use crate::Board;
-
-pub enum Symbol {
-    X,
-    O,
-}
-
-pub struct Player {
-    symbol: Symbol,
-}
+use super::{
+    errors::GameError,
+    player::{
+        Player,
+        Symbol,
+    },
+};
+use crate::components::Board;
 
 #[allow(dead_code)]
 pub struct Game {
@@ -34,16 +32,16 @@ impl Game {
         }
     }
 
-    // #[allow(dead_code)]
-    // pub fn play(&mut self) -> Result<(), Error> {
-    //     self.board.get_square(2, 2).set_x();
-    //     Ok(())
-    // }
+    #[allow(dead_code)]
+    pub fn play(&mut self) -> Result<(), GameError> {
+        self.board.get_square(2, 2).set_value(Symbol::X);
+        Ok(())
+    }
 
-    // #[allow(dead_code)]
-    // pub fn winner(&self) -> Option<Player> {
-    //     &self.winner
-    // }
+    #[allow(dead_code)]
+    pub fn winner(&self) -> Option<Player> {
+        self.winner
+    }
 
     pub fn board(&self) -> &Board {
         &self.board
