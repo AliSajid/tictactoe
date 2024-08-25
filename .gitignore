@@ -38,3 +38,6 @@ meta/vale-styles/**/*
 package_version_to_delete
 
 megalinter-reports/
+
+# ltex configuration files
+ltex.*
