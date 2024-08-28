@@ -10,7 +10,6 @@ use super::{
         Symbol,
     },
 };
-use crate::components::Board;
 
 #[allow(dead_code)]
 pub struct Game {

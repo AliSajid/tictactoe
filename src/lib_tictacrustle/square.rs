@@ -72,7 +72,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new();
+    /// let square = Square::new(0, 0);
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
@@ -240,8 +240,8 @@ impl Square {
     /// - [`is_x`](struct.Square.html#method.is_x)
     /// - [`is_o`](struct.Square.html#method.is_o)
     #[must_use]
-    pub const fn get_value(&self) -> SquareValue {
-        self.value
+    pub const fn get_value(&self) -> &SquareValue {
+        &self.value
     }
 
     /// Sets the value of the `Square`.
@@ -284,10 +284,11 @@ impl Square {
     /// * `value` - A string that represents the new `SquareValue`. It should be either `"X"`,
     ///   `"O"`, or `" "`.
     pub fn set_value(&mut self, value: &str) {
-        match value {
-            "X" => self.value = SquareValue::X,
-            "O" => self.value = SquareValue::O,
-            " " => self.value = SquareValue::Empty,
+        match (self.value, value) {
+            (SquareValue::Empty, "X") => self.value = SquareValue::X,
+            (SquareValue::Empty, "O") => self.value = SquareValue::O,
+            (SquareValue::X, _) => panic!("Square is already X"),
+            (SquareValue::O, _) => panic!("Square is already O"),
             _ => panic!("Invalid value"),
         }
     }
@@ -368,119 +369,117 @@ mod tests {
     }
 
     #[fixture]
-    fn square_x() -> Square {
+    fn x_square() -> Square {
         let mut square = Square::new();
-        square.set_x().expect("Failed to set X");
+        square.set_x();
         square
     }
 
     #[fixture]
-    fn square_o() -> Square {
+    fn o_square() -> Square {
         let mut square = Square::new();
-        square.set_o().expect("Failed to set O");
+        square.set_o();
         square
     }
 
-    #[test]
-    fn test_new() {
-        let square = Square::new();
-        assert_eq!(square.get_value(), SquareValue::Empty);
+    #[rstest]
+    fn test_new(empty_square: Square) {
+        assert_eq!(empty_square.get_value(), &SquareValue::Empty);
     }
 
-    #[test]
-    fn test_is_empty() {
-        let square = Square::new();
-        assert!(square.is_empty());
+    #[rstest]
+    fn test_is_empty(empty_square: Square) {
+        assert!(empty_square.is_empty());
     }
 
-    #[test]
-    fn test_is_x() {
+    #[rstest]
+    fn test_is_x(x_square: Square) {
+        assert!(x_square.is_x());
+    }
+
+    #[rstest]
+    fn test_is_o(o_square: Square) {
+        assert!(o_square.is_o());
+    }
+
+    #[rstest]
+    #[case(empty_square(), &SquareValue::Empty)]
+    #[case(x_square(), &SquareValue::X)]
+    #[case(o_square(), &SquareValue::O)]
+    fn test_get_value(#[case] square: Square, #[case] expected: &SquareValue) {
+        assert_eq!(square.get_value(), expected);
+    }
+
+    #[rstest]
+    #[case("X", &SquareValue::X, true, false)]
+    #[case("O", &SquareValue::O, false, true)]
+    fn test_set_value(
+        #[case] value: &str,
+        #[case] result: &SquareValue,
+        #[case] is_x: bool,
+        #[case] is_o: bool,
+    ) {
         let mut square = Square::new();
-        square.set_x().expect("Failed to set square to X");
-        assert!(square.is_x());
-    }
-
-    #[test]
-    fn test_is_o() {
-        let mut square = Square::new();
-        square.set_o();
-        assert!(square.is_o());
-    }
-
-    #[test]
-    fn test_get_value() {
-        let mut square = Square::new();
-        square.set_x();
-        assert_eq!(square.get_value(), SquareValue::X);
-        square.set_o();
-        assert_eq!(square.get_value(), SquareValue::O);
-    }
-
-    #[test]
-    fn test_set_value() {
-        let mut square = Square::new();
-        square.set_value("X");
-        assert_eq!(square.get_value(), SquareValue::X);
-        square.set_value("O");
-        assert_eq!(square.get_value(), SquareValue::O);
-        square.set_value(" ");
-        assert_eq!(square.get_value(), SquareValue::Empty);
+        square.set_value(value);
+        assert_eq!(square.get_value(), result);
+        assert_eq!(square.is_x(), is_x);
+        assert_eq!(square.is_o(), is_o);
     }
 
     #[test]
     #[should_panic(expected = "Invalid value")]
     fn test_set_value_invalid() {
         let mut square = Square::new();
-        square.set_value("invalid");
+        square.set_value("Invalid");
     }
 
-    #[test]
-    fn test_set_x() {
-        let mut square = Square::new();
-        let res = square.set_x();
-        assert!(square.is_x());
-        assert!(!square.is_o());
-        assert!(!square.is_empty());
-        assert!(res.is_ok());
-        let res = square.set_o();
-        assert!(res.is_err());
-        assert_eq!(res.unwrap_err().to_string(), "Square is not empty");
-        let res: Result<()> = square.set_x();
-        assert!(res.is_err());
-        assert_eq!(res.unwrap_err().to_string(), "Square is already X");
+    #[rstest]
+    #[should_panic(expected = "Square is already")]
+    #[case(x_square(), "X")]
+    #[case(x_square(), "O")]
+    #[case(o_square(), "X")]
+    #[case(o_square(), "O")]
+    fn test_set_value_x(#[case] mut square: Square, #[case] set_value: &str) {
+        square.set_value(set_value);
     }
 
-    #[test]
-    fn test_set_o() {
-        let mut square = Square::new();
-        square.set_o();
-        assert_eq!(square.get_value(), SquareValue::O);
+    #[rstest]
+    fn test_set_x(mut empty_square: Square) {
+        empty_square.set_x();
+        assert!(empty_square.is_x());
+        assert!(!empty_square.is_o());
+        assert!(!empty_square.is_empty());
     }
 
-    #[test]
-    fn test_display() {
-        let mut square = Square::new();
-        square.set_x();
-        assert_eq!(format!("{}", square), " X ");
-        square.set_o();
-        assert_eq!(format!("{}", square), " O ");
-        square.set_value(" ");
-        assert_eq!(format!("{}", square), "   ");
+    #[rstest]
+    fn test_set_o(mut empty_square: Square) {
+        empty_square.set_o();
+        assert!(empty_square.is_o());
+        assert!(!empty_square.is_x());
+        assert!(!empty_square.is_empty());
+    }
+
+    #[rstest]
+    #[case(empty_square(), " ")]
+    #[case(x_square(), "X")]
+    #[case(o_square(), "O")]
+    fn test_display(#[case] square: Square, #[case] expected: &str) {
+        assert_eq!(format!("{square}"), expected);
     }
 
     #[test]
     fn test_default() {
         let square = Square::default();
-        assert_eq!(square.get_value(), SquareValue::Empty);
+        assert_eq!(square.get_value(), &SquareValue::Empty);
     }
 
     #[rstest]
     #[case(empty_square(), empty_square(), true)]
-    #[case(square_x(), square_x(), true)]
-    #[case(square_o(), square_o(), true)]
-    #[case(empty_square(), square_x(), false)]
-    #[case(empty_square(), square_o(), false)]
-    #[case(square_x(), square_o(), false)]
+    #[case(x_square(), x_square(), true)]
+    #[case(o_square(), o_square(), true)]
+    #[case(empty_square(), x_square(), false)]
+    #[case(empty_square(), o_square(), false)]
+    #[case(x_square(), o_square(), false)]
     fn test_eq(#[case] square1: Square, #[case] square2: Square, #[case] expected: bool) {
         assert_eq!(square1 == square2, expected);
     }
