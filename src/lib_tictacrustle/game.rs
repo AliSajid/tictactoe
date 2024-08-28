@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use super::{
-    errors::GameError,
-    player::{
-        Player,
-        Symbol,
-    },
+use crate::{
+    Board,
+    GameError,
+    Player,
+    Symbol,
 };
 
 #[allow(dead_code)]
@@ -20,6 +19,7 @@ pub struct Game {
 }
 
 impl Game {
+    #[must_use]
     pub fn new() -> Self {
         let current_player = Player { symbol: Symbol::X };
         let other_player = Player { symbol: Symbol::O };
@@ -33,16 +33,24 @@ impl Game {
 
     #[allow(dead_code)]
     pub fn play(&mut self) -> Result<(), GameError> {
-        self.board.get_square(2, 2).set_value(Symbol::X);
+        self.board.get_square_mut(2, 2).set_value("X");
         Ok(())
     }
 
     #[allow(dead_code)]
-    pub fn winner(&self) -> Option<Player> {
+    #[must_use]
+    pub const fn winner(&self) -> Option<Player> {
         self.winner
     }
 
-    pub fn board(&self) -> &Board {
+    #[must_use]
+    pub const fn board(&self) -> &Board {
         &self.board
+    }
+}
+
+impl Default for Game {
+    fn default() -> Self {
+        Self::new()
     }
 }
